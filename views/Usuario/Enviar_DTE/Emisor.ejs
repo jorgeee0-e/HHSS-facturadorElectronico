@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/Emisor_Receptor_DTE.css">
+    <link rel="stylesheet" href="../../css/FormBasic.css">
+    <link rel="stylesheet" href="../../css/Enviar-DTE.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <title>Emisor</title>
+</head>
+<body>
+
+    <header class="encabezado-usuario">
+
+        <div class="div-encabezado-usuario">
+            <div class="token-generacion">
+                <p>Token</p>
+                <div class="token-estado">
+                    <p id="tk_etatus">✔</p>
+                </div>
+            </div>
+            <div class="eventos-header">
+                <p>Eventos</p>
+                <img src="../../img/eventos.png" alt="" width="100%" height="100%">
+            </div>
+            <div class="soporte-header">
+                <p>Soporte</p>
+                <img src="../../img/user.png" alt="" width="100%" height="100%">
+            </div>
+        </div>
+
+        <div class="usuario-informacion">
+            <div class="estado-usuario">
+                <p id="usr_status">✔</p>
+            </div>
+            <div class="img-usuario">
+                <img src="../../img/user.png" alt="" width="100%" height="100%">
+            </div>
+            <div class="informacion-usuario">
+                <p class="informacion-usuario-bienvenido">
+                    Bienvenido
+                </p>
+                <p class="informacion-usuario-nombre">
+                    Josue Alejandro Rodriguez Murcia
+                </p>
+            </div>
+        </div>
+
+    </header>
+
+    <form id="Emisor_DTE_Form">
+        <div class="Tipo_DTE_Emisor" id="Tipo_DTE_Emisor">
+            <p class="Tipo_DTE_Emisor_Title">Emisor</p>
+            <div class="Tipo_DTE_Emisor_Fila1">
+                <div class="Label_Emisor_1">
+                    <label for="Nombre_Emisor">Nombre</label>
+                    <label for="Nombre_Comercial_Emisor">Nombre Comercial</label>
+                </div>
+                <div class="Input_Emisor_1">
+                    <input type="text" name="Nombre_Emisor" id="Nombre_Emisor">
+                    <input type="text" name="Nombre_Comercial_Emisor" id="Nombre_Comercial_Emisor">
+                </div>
+            </div>
+    
+            <div class="Tipo_DTE_Emisor_Fila2">
+                <div class="Label_Emisor_2">
+                    <label for="Actividad_Emisor">Actividad</label>
+                    <label for="NIT_Emisor">NIT</label>
+                </div>
+                <div class="Input_Emisor_2">
+                    <input type="text" name="Actividad_Emisor" id="Actividad_Emisor">
+                    <input type="text" name="NIT_Emisor" id="NIT_Emisor" placeholder="1234-567890-123-4">
+                </div>
+            </div>
+    
+            <div class="Tipo_DTE_Emisor_Fila3">
+                <div class="Label_Emisor_3">
+                    <label for="NCR_Emisor">NCR</label>
+                    <label for="Departamento_Emisor">Departamento</label>
+                </div>
+                <div class="Input_Emisor_3">
+                    <input type="text" name="NCR_Emisor" id="NCR_Emisor">
+                    <input type="text" name="Departamento_Emisor" id="Departamento_Emisor">
+                </div>
+            </div>
+    
+            <div class="Tipo_DTE_Emisor_Fila4">
+                <div class="Label_Emisor_4">
+                    <label for="Municipio_Emisor">Municipio</label>
+                    <label for="Complemento_Emisor">Complemento</label>
+                </div>
+                <div class="Input_Emisor_4">
+                    <input type="text" name="Municipio_Emisor" id="Municipio_Emisor">
+                    <input type="text" name="Complemento_Emisor" id="Complemento_Emisor">
+                </div>
+            </div>
+    
+            <div class="Tipo_DTE_Emisor_Fila5">
+                <div class="Label_Emisor_5">
+                    <label for="Telefono_Emisor">Telefono</label>
+                    <label for="Correo_Emisor">Correo Electronico</label>
+                </div>
+                <div class="Input_Emisor_5">
+                    <input type="text" name="Telefono_Emisor" id="Telefono_Emisor" placeholder="+123 4567-8901">
+                    <input type="email" name="Correo_Emisor" id="Correo_Emisor" placeholder="ejemplo@gmail.com">
+                </div>
+                <div id="error_reenvio"></div>
+            </div>
+        </div>
+        <div class="Formularios_DTE_P2">
+            <div class="Botones_Principales_Formulario">
+                <div class="Btn_Atras">
+                    <button id="btn-Atras" class="btn-Atras">Atras</button>
+                </div>
+                <div class="Btn_Limpiar">
+                    <button id="btn-Limpiar" form="Formularios_DTE" class="btn-Limpiar" type="reset">Limpiar</button>
+                </div>
+                <div class="Btn_Siguiente">
+                    <button id="Btn_Siguiente_Tipo_DTE" class="btn-Siguiente">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+<script src="../../js/Validacion_Emisor_DTE.js"></script> 
+</html>

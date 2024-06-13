@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receptor</title>
+    <link rel="stylesheet" href="../../css/Emisor_Receptor_DTE.css">
+    <link rel="stylesheet" href="../../css/FormBasic.css">
+    <link rel="stylesheet" href="../../css/Enviar-DTE.css">
+    <link rel="stylesheet" href="../../css/header.css">
+</head>
+<body>
+    <header class="encabezado-usuario">
+
+        <div class="div-encabezado-usuario">
+            <div class="token-generacion">
+                <p>Token</p>
+                <div class="token-estado">
+                    <p id="tk_etatus">✔</p>
+                </div>
+            </div>
+            <div class="eventos-header">
+                <p>Eventos</p>
+                <img src="../../img/eventos.png" alt="" width="100%" height="100%">
+            </div>
+            <div class="soporte-header">
+                <p>Soporte</p>
+                <img src="../../img/user.png" alt="" width="100%" height="100%">
+            </div>
+        </div>
+
+        <div class="usuario-informacion">
+            <div class="estado-usuario">
+                <p id="usr_status">✔</p>
+            </div>
+            <div class="img-usuario">
+                <img src="../../img/user.png" alt="" width="100%" height="100%">
+            </div>
+            <div class="informacion-usuario">
+                <p class="informacion-usuario-bienvenido">
+                    Bienvenido
+                </p>
+                <p class="informacion-usuario-nombre">
+                    Josue Alejandro Rodriguez Murcia
+                </p>
+            </div>
+        </div>
+
+    </header>
+    <form action="" method="POST" id="Receptor_DTE_Form">
+        <div class="Tipo_DTE_Receptor" id="Tipo_DTE_Receptor">
+            <p class="Tipo_DTE_Receptor_Title">Receptor</p>
+            <div class="Tipo_DTE_Receptor_Fila1">
+                <div class="Label_Receptor_1">
+                    <label for="Nombre_Receptor">Nombre</label>
+                    <label for="NCR_Receptor">NCR</label>
+                </div>
+                <div class="Input_Receptor_1">
+                    <input type="text" name="Nombre_Receptor" id="Nombre_Receptor">
+                    <input type="text" name="NCR_Receptor" id="NCR_Receptor">
+                </div>
+            </div>
+    
+            <div class="Tipo_DTE_Receptor_Fila2">
+                <div class="Label_Receptor_2">
+                    <label for="Tipo_Documento_Receptor">Tipo de Documento</label>
+                    <label for="N_Documento_Receptor">N° de Documento</label>
+                </div>
+                <div class="Input_Receptor_2">
+                    <input type="text" name="Tipo_Documento_Receptor" id="Tipo_Documento_Receptor">
+                    <input type="text" name="N_Documento_Receptor" id="N_Documento_Receptor">
+                </div>
+            </div>
+    
+            <div class="Tipo_DTE_Receptor_Fila3">
+                <div class="Label_Receptor_3">
+                    <label for="Departamento_Receptor">Departamento</label>
+                    <label for="Municipio_Receptor">Municipio</label>
+                </div>
+                <div class="Input_Receptor_3">
+                    <input type="text" name="Departamento_Receptor" id="Departamento_Receptor">
+                    <input type="text" name="Municipio_Receptor" id="Municipio_Receptor">
+                </div>
+            </div>
+    
+            <div class="Tipo_DTE_Receptor_Fila4">
+                <div class="Label_Receptor_4">
+                    <label for="Complemento_Receptor">Complemento</label>
+                    <label for="Actividad_Receptor">Actividad</label>
+                </div>
+                <div class="Input_Receptor_4">
+                    <input type="text" name="Complemento_Receptor" id="Complemento_Receptor">
+                    <input type="text" name="Actividad_Receptor" id="Actividad_Receptor">
+                </div>
+            </div>
+    
+            <div class="Tipo_DTE_Receptor_Fila5">
+                <div class="Label_Receptorr_5">
+                    <label for="Telefono_Receptor">Telefono</label>
+                    <label for="Correo_Receptor">Correo Electronico</label>
+                </div>
+                <div class="Input_Receptor_5">
+                    <input type="text" name="Telefono_Receptor" id="Telefono_Receptor" placeholder="+123 4567-8901">
+                    <input type="email" name="Correo_Receptor" id="Correo_Receptor" placeholder="ejemplo@gmail.com">
+                </div>
+                <div id="error_reenvio"></div>
+            </div>
+        </div>
+        <div class="Formularios_DTE_P2">
+            <div class="Botones_Principales_Formulario">
+                <div class="Btn_Atras">
+                    <button id="btn-Atras" class="btn-Atras">Atras</button>
+                </div>
+                <div class="Btn_Limpiar">
+                    <button id="btn-Limpiar" form="Receptor_DTE_Form" class="btn-Limpiar" type="reset">Limpiar</button>
+                </div>
+                <div class="Btn_Siguiente">
+                    <button id="Btn_Siguiente_Receptor_DTE" class="btn-Siguiente">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+<script src="../../js/Validacion_Receptor.js"></script>
+</html>

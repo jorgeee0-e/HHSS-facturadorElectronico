@@ -1,0 +1,161 @@
+body{
+    font-family: 'Brasley Medium';
+}
+
+.container-top{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-inicio-sesion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-inicio-sesion > h1 {
+    font-size: 80px;
+    margin: 0 0 40px 0;
+    color: rgb(36, 120, 231);
+}
+
+.form-inicio-sesion > input{
+    width: 410px;
+    margin: 10px 0 10px 0;
+    border: none;
+    background-color: rgb(235, 235, 235);
+    border-radius: 5px;
+    font-size: 25px;
+    padding: 3px;
+}
+
+.Label_Edad_Registro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0% 0 1% 0;
+}
+
+.Label_Edad_Registro > label{
+    color: rgb(36, 120, 231);
+    font-size: 20px;
+}
+
+.Label_Edad_Registro > label:nth-child(1){
+    width: 81%;
+}
+
+.Label_Edad_Registro > label:nth-child(2){
+    width: 19%;
+}
+
+.form-inicio-sesion > label, .Label_Edad_Registro{
+    width: 410px;
+    margin: 10px 0 0px 0;
+    color: rgb(36, 120, 231);
+    font-size: 20px;
+}
+
+.nombre-usuario-registro > input{
+    border: none;
+    background-color: rgb(235, 235, 235);
+    border-radius: 5px;
+    font-size: 25px;
+    padding: 3px;
+}
+
+.edad-gmail-registro > input{
+    border: none;
+    background-color: rgb(235, 235, 235);
+    border-radius: 5px;
+    font-size: 25px;
+    padding: 3px;
+}
+
+.edad-gmail-registro > input:nth-child(1) {
+    width: 80%;
+    margin: 0 20px 0 0;
+}
+
+.edad-gmail-registro > input:nth-child(2) {
+    width: 20%;
+}
+
+
+.form-inicio-sesion > input:focus{
+    outline: none;
+    border: none;
+}
+
+.edad-gmail-registro > input:focus{
+    outline: none;
+    border: none;
+}
+
+.form-inicio-sesion > a {
+    text-decoration: none;
+    margin: 20px 0 30px 0;
+    font-size: 22px;
+}
+
+.btn-inicio-sesion{
+    transition: .1s;
+    background-color: rgb(36, 120, 231);
+    width: 410px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 35px;
+    border: none;
+    color: white;
+}
+
+.btn-inicio-sesion:hover{
+    transition: .1s;
+    background-color: rgb(24, 86, 167);
+    transform: scale(0.95);
+}
+
+.nombre-usuario-registro{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 410px;
+}
+
+.edad-gmail-registro{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 410px;
+}
+
+@media screen and (max-width: 1200px) {
+    .form-inicio-sesion {
+        width: 100%; 
+    }
+
+    .container-logo{
+        width: 45%;
+        margin: 0 0 5% 0;
+    }
+}

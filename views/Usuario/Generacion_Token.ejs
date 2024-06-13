@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/FormBasic.css">
+    <link rel="stylesheet" href="resources/css/header.css">
+    <link rel="stylesheet" href="resources/css/Generar_Token.css">
+    <title>Generar Token</title>
+</head>
+<body>
+    <%- include('../header')%>
+    <div class="Generar_Token_P">
+        <form id="Generacion_Token" class="Form_Generar_Token">
+            <div class="Titulo_Generar_Token">
+                <p>Generar Token</p>
+            </div>
+            <div class="Solicitar_Usuario_Cont">
+                <label for="Id_Usuario_Token">
+                    Usuario
+                </label>
+                <input type="text" name="Info_Token_Usuarios" id="Id_Usuario_Token">
+                <label for="Contrasena_Token">
+                    ID
+                </label>
+                <input type="password" name="Info_Token_Usuarios" id="Contrasena_Token">
+                <div id="error_reenvio">
+                </div>
+            </div>
+            <div class="Formularios_DTE_P2">
+                <div class="Botones_Principales_Formulario">
+                    <div class="Btn_Atras">
+                        <a id="btn-Atras" class="btn-Atras" href="/administrar">Pagina Principal</a>
+                    </div>
+                    <div class="Btn_Limpiar">
+                        <a id="btn-Limpiar"class="btn-Limpiar" href="/token/historial" type="reset">Historial De Tokens</a>
+                    </div>
+                    <div class="Btn_Siguiente">
+                        <a id="Btn_Generacion_Token" href="/generacion_token" type="submit" form="Generacion_Token" class="btn-Generar-Token">Generar Token</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="./../js/Generacion_Token.js"></script>
+</html>

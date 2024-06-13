@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/Emisor_Receptor_DTE.css">
+    <link rel="stylesheet" href="../../css/FormBasic.css">
+    <link rel="stylesheet" href="../../css/Enviar-DTE.css">
+    <link rel="stylesheet" href="../../css/Menu_Lateral.css">
+    <title>Detalles</title>
+</head>
+<body>
+    <div class="Menu_Lateral_DTE" id="Menu_Lateral_DTE">
+        <div class="Seccion_Pasos_DTE">
+            <a href="#" class="Seccion_Tipo_DTE">
+                <div>
+                    <p>Tipo DTE</p>
+                </div>
+            </a>
+
+            <div class="Circulo"></div>
+            <div class="Circulo"></div>
+            <div class="Circulo"></div>
+
+            <a href="#" class="Seccion_Emisor_DTE">
+                <div>
+                    <p>Emisor</p>
+                </div>
+            </a>
+
+            <div class="Circulo"></div>
+            <div class="Circulo"></div>
+            <div class="Circulo"></div>
+
+            <a href="#" class="Seccion_Receptor">
+                <div>
+                    <p>Receptor</p>
+                </div>
+            </a>
+
+            <div class="Circulo"></div>
+            <div class="Circulo"></div>
+            <div class="Circulo"></div>
+
+            <a href="#"  class="Seccion_Detalles">
+                <div>
+                    <p>Detalles</p>
+                </div>
+            </a>
+        </div>
+        <label for="checkboxT" class="Boton AbrirMenu">
+            <div>
+                <input type="checkbox" id="checkboxT" hidden>
+                <p style="width: 100%; height: 100%;">|||</p>
+            </div>
+        </label>
+    </div>
+    <header class="encabezado-usuario">
+
+        <div class="div-encabezado-usuario">
+            <div class="token-generacion">
+                <p>Token</p>
+                <div class="token-estado">
+                    <p id="tk_etatus">✔</p>
+                </div>
+            </div>
+            <div class="eventos-header">
+                <p>Eventos</p>
+                <img src="../../img/eventos.png" alt="" width="100%" height="100%">
+            </div>
+            <div class="soporte-header">
+                <p>Soporte</p>
+                <img src="../../img/user.png" alt="" width="100%" height="100%">
+            </div>
+        </div>
+
+        <div class="usuario-informacion">
+            <div class="estado-usuario">
+                <p id="usr_status">✔</p>
+            </div>
+            <div class="img-usuario">
+                <img src="../../img/user.png" alt="" width="100%" height="100%">
+            </div>
+            <div class="informacion-usuario">
+                <p class="informacion-usuario-bienvenido">
+                    Bienvenido
+                </p>
+                <p class="informacion-usuario-nombre">
+                    Josue Alejandro Rodriguez Murcia
+                </p>
+            </div>
+        </div>
+
+    </header>
+
+    <form action="" id="Tipo_DTE_Detalles_Form">
+        <div class="Tipo_DTE_Detalles" id="Tipo_DTE_Detalles">
+            <p class="Tipo_DTE_Detalles_Title">Detalles</p>
+            <div class="Tipo_DTE_Detalles_Fila1">
+                <div class="Label_Detalles_1">
+                    <label for="Nombre_Detalles">Nombre</label>
+                    <label for="Precio_Unitario_Detalles">Precio Unitario</label>
+                    <label for="Ventas_Sujetas_Detalles">Ventas Sujetas</label>
+                    <label for="Ventas_Externas_Detalles">Ventas Externas</label>
+                </div>
+                <div class="Input_Detalles_1">
+                    <input type="text" name="Nombre_Detalles" id="Nombre_Detalles">
+                    <input type="number" name="Precio_Unitario_Detalles" id="Precio_Unitario_Detalles" required>
+                    <input type="number" name="Ventas_Sujetas_Detalles" id="Ventas_Sujetas_Detalles" required>
+                    <input type="number" name="Ventas_Externas_Detalles" id="Ventas_Externas_Detalles" required>
+                </div>
+            </div>
+
+            <div class="Tipo_DTE_Detalles_FilaDescripcion">
+                <div class="Label_Detalles_Descripcion">
+                    <label for="Descripcion_Detalles" >Descripcion</label>
+                </div>
+                <div class="Input_Detalles_Descripcion">
+                    <textarea name="Descripcion_Detalles" class="Descripcion_Detalles" id="Descripcion_Detalles" required></textarea>
+                </div>
+            </div>
+
+            <div class="Tipo_DTE_Detalles_Fila2">
+                <div class="Label_Detalles_2">
+                    <label for="Tipo_Documento_Detalles">Tipo de Documento</label>
+                    <label for="N_Documento_Detalles">N° de Documento</label>
+                </div>
+                <div class="Input_Detalles_2">
+                    <input type="text" name="Tipo_Documento_Detalles" id="Tipo_Documento_Detalles" required>
+                    <input type="text" name="N_Documento_Detalles" id="N_Documento_Detalles" required>
+                </div>
+            </div>
+
+            <div class="Tipo_DTE_Detalles_Fila3">
+                <div class="Label_Detalles_3">
+                    <label for="Departamento_Detalles">Departamento</label>
+                    <label for="Municipio_Detalles">Municipio</label>
+                </div>
+                <div class="Input_Detalles_3">
+                    <input type="text" name="Departamento_Detalles" id="Departamento_Detalles" required>
+                    <input type="text" name="Municipio_Detalles" id="Municipio_Detalles" required>
+                </div>
+            </div>
+
+            <div class="Tipo_DTE_Detalles_Fila4">
+                <div class="Label_Detalles_4">
+                    <label for="Complemento_Detalles">Complemento</label>
+                    <label for="Actividad_Detalles">Actividad</label>
+                </div>
+                <div class="Input_Detalles_4">
+                    <input type="text" name="Complemento_Detalles" id="Complemento_Detalles" required>
+                    <input type="text" name="Actividad_Detalles" id="Actividad_Detalles" required>
+                </div>
+            </div>
+
+            <div class="Tipo_DTE_Detalles_Fila5">
+                <div class="Label_Detallesr_5">
+                    <label for="Telefono_Detalles">Telefono</label>
+                    <label for="Correo_Detalles">Correo Electronico</label>
+                </div>
+                <div class="Input_Detalles_5">
+                    <input type="text" name="Telefono_Detalles" id="Telefono_Detalles" placeholder="Ej: +123 4567-8901" required>
+                    <input type="email" name="Correo_Detalles" id="Correo_Detalles" placeholder="ejemplo@gmail.com" required>
+                </div>
+                <div id="error_reenvio"></div>
+            </div>
+        </div>
+        <div class="Formularios_DTE_P2">
+            <div class="Botones_Principales_Formulario">
+                <div class="Btn_Atras">
+                    <button id="btn-Atras" class="btn-Atras">Atras</button>
+                </div>
+                <div class="Btn_Limpiar">
+                    <button id="btn-Limpiar" form="Tipo_DTE_Detalles_Form" class="btn-Limpiar" type="reset">Limpiar</button>
+                </div>
+                <div class="Btn_Siguiente">
+                    <button id="Btn_Siguiente_Detalles_DTE" class="btn-Siguiente">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+<script src="../../js/Validacion_Detalles.js"></script>
+<script src="../../js/Menu_Lateral.js"></script>
+</html>

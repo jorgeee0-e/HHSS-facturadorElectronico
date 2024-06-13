@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Brasley Medium';
+    src: url(../font/Brasley\ Medium.otf);
+}
+
+body{
+    font-family: Brasley Medium;
+    background-color: rgb(221, 221, 221);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container-top{
+    height: auto;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

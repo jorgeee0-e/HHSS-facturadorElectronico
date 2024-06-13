@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="resources/css/FormBasic.css">
+    <link rel="stylesheet" href="resources/css/Inicio_Sesion.css">
+</head>
+<body style="background-color: white;">
+    <div class="container-top">
+        <div class="container-logo">
+            <img src="resources/img/Registrarse.png" width="100%" height="100%" alt="logo" class="logo">
+        </div>
+        
+        <form action="/registro" method="POST" class="form-inicio-sesion" id="Form_Registro_Usuario">
+
+            <h1>Registrarse</h1>
+            <!--Hidden Mode a "codContaduria" and "codUsuario" generated in backend(Esta En Ingles)-->
+
+            <label for="Nombre_Registro">Nombres</label>
+            <input type="text" name="Nombre_Registro" id="Nombre_Registro" class="Nombre_Registro" placeholder="Nombres">
+
+            <label for="Apellidos_Registro">Apellidos</label>
+            <input type="text" name="Apellidos_Registro" id="Apellidos_Registro" class="Apellidos_Registro" placeholder="Apellidos">
+
+            <div class="Label_Edad_Registro">
+                <label for="Gmail_Registro">Correo</label>
+                <label for="Edad_Registro">Edad</label>
+            </div>
+
+            <div class="edad-gmail-registro">
+                <input type="email" name="Gmail_Registro" id="Gmail_Registro" class="Gmail_Registro" placeholder="example@gmail.com">
+                <input type="number" name="Edad_Registro" id="Edad_Registro" class="Edad_Registro" placeholder="Edad">
+            </div>
+
+            <label for="Gmail_Registro_Sec">Correo Secundario (Opcional)</label>
+            <input type="email" name="Gmail_Registro_Sec" id="Gmail_Registro_Sec" placeholder="example2@gmail.com">
+
+            <label for="DUI_Registro">DUI</label>
+            <input type="text" name="DUI_Registro" id="DUI_Registro" class="DUI_Registro" placeholder="DUI" maxlength="10">
+            
+            <label for="Usuario_Registro">Usuario</label>
+            <input type="text" name="Usuario_Registro" id="Usuario_Registro" class="Usuario_Registro" placeholder="Usuario">
+            
+            <label for="Passw_Registro">Contraseña</label>
+            <input type="password" name="Passw_Registro" id="Passw_Registro" class="Passw_Registro" placeholder="Contrasena">
+            <div class="error_reenvio" id="error_reenvio"></div>
+            <a href="/index">Si ya tienes una cuenta da click aqui</a>
+
+            <button type="submit" class="btn-inicio-sesion" name="btn-inicio-sesion" id="Btn_Registarse">Registrarse</button>
+        </form>
+
+    </div>
+
+</body>
+<script src="resources/js/Validacion_Registro_Usuario.js"></script>
+</html>

@@ -1,0 +1,114 @@
+.Historial_Tokens{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Historial_Tokens_Table{
+    width: 95%;
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    flex-wrap: nowrap;
+    background-color: rgb(119, 119, 255);
+    flex-direction: column;
+    border: 3px solid rgb(81, 81, 192);
+    color: rgb(230, 230, 230);
+}
+
+.Historial_Tokens_Table > caption{
+    font-size: 25px;
+    padding: 2% 0;
+    font-weight: bold;
+}
+
+.Historial_Tokens_Table > thead, .Historial_Tokens_Table > tbody{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Historial_Tokens_Table > tbody {
+    flex-direction: column;
+}
+
+.Historial_Tokens_Table > thead > tr {
+    width: 100%;
+    display: flex;
+}
+
+.Historial_Tokens_Table > thead > tr > th{
+    flex: 2;
+    background-color: rgba(233, 233, 233, 0.39);
+    padding: 2%;
+}
+
+.Historial_Tokens_Table > tbody > tr {
+    width: 100%;
+    display: flex;
+}
+
+.Historial_Tokens_Table > tbody > tr > td{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 0;
+}
+
+.Seccion_Impar{
+    background-color: rgb(219, 219, 219);
+    border: 2px solid  rgb(177, 177, 177);
+    color: black;
+}
+
+.Seccion_Par{
+    background-color: rgba(233, 233, 233, 0.39);
+}
+
+.Btn_Atras > a{
+    text-align: center;
+    text-decoration: none;
+    padding: 1.5% 0;
+    border: 2px solid rgb(90, 142, 255);
+    color: rgb(90, 142, 255);
+    margin: 1% 0 ;
+    border-radius: 45px;
+    width: 50%;
+    font-size: 20px;
+    transition: 0.1s ease-in-out;
+    background-color: rgb(221, 221, 221);
+}
+
+.Btn_Atras > a:hover{
+    transition: 0.1s ease-in-out;
+    background-color: rgb(90, 142, 255);
+    transform: scale(.95);
+    color: white;
+}
+
+.Formularios_DTE_P2{
+    width: 100%;
+    height: 25%;
+}
+
+.Botones_Principales_Formulario{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Btn_Atras{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

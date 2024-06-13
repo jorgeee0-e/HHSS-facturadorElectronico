@@ -1,0 +1,86 @@
+body{
+    font-family: Brasley Medium;
+}
+
+.administrar-dte{
+    margin: 5% 0;
+    display: flex;
+    align-items: center;
+}
+
+.caja-administrar-dte, .caja-resgistro-dte{
+    text-decoration: none;
+    color: white;
+    height: 300px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    margin: 0 5%;
+}
+
+.registros-DTE{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-registros-DTE{
+    width: 220px;
+    height: 180px;
+}
+
+.caja-administrar-dte{
+    width: 65%;
+    background-color: rgb(102, 132, 255);
+}
+
+.caja-resgistro-dte{
+    min-width: 300px;
+    width: 35%;
+    background-color: rgb(61, 220, 151);
+}
+
+.enviar-DTE{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.titulo-DTE, .titulo-registros-DTE{
+    font-size: 30px;
+    margin: 0 5%;
+    color: white;
+}
+
+.img-DTE{
+    width: 200px;
+    height: 200px;
+}
+
+.caja-administrar-dte:hover{
+    transition: 0.1s;
+    background-color: rgb(102, 132, 255);
+    transform: scale(0.95);
+}
+
+.caja-resgistro-dte:hover{
+    transition: 0.1s;
+    transform: scale(0.95);
+}
+
+@media (max-width:1050px) {
+    .administrar-dte{
+        flex-direction: column;
+        padding: 0 5%;
+    }
+
+    .caja-administrar-dte, .caja-resgistro-dte{
+        width: 100%;
+        margin: 5%;
+    }
+}

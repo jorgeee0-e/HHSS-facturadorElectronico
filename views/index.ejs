@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="resources/css/FormBasic.css">
+    <link rel="stylesheet" href="resources/css/Inicio_Sesion.css">
+</head>
+<body style="background-color: white;">
+    <div class="container-top">
+        <div class="container-logo">
+            <img src="resources/img/Bienvenido.png" width="100%" height="100%" alt="logo" class="logo">
+        </div>
+        
+        <form action="/auth" method="POST" class="form-inicio-sesion">
+            <h1>Bienvenido</h1>
+            <input type="text" name="Usuario_Login" id="Usuario_Login" class="Usuario_Login" placeholder="Usuario" value="Luis09">
+            <input type="password" name="Passw_Login" id="Passw_Login" class="Passw_Login" placeholder="Contrasena" value="Luis09">
+            <a href="/registrarse">No tienes una cuenta? Registrate Aqui</a>
+            <button type="submit" class="btn-inicio-sesion" name="btn-inicio-sesion">Iniciar Sesion</button>
+        </form>
+    </div>
+
+</body>
+</html>

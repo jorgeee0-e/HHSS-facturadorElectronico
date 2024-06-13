@@ -1,0 +1,46 @@
+.Vista_Activo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Vista_Desactivo{
+    display: none;
+}
+
+.error{
+    width: 100%;
+    text-align: left;
+    padding: 0% 2%;
+    font-size: 20px;
+    color: red;
+    animation: fadeInOut .5s infinite;
+}
+
+.error_label_no_select{
+    animation: alert_error .5s forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes alert_error {
+    0% {
+        background-color: none;
+    }
+    50% {
+        background-color: red;
+    }
+    100% {
+        background-color: none;
+    }
+}

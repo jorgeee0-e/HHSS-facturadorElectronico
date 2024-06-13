@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar-DTE</title>
+    <link rel="stylesheet" href="../resources/css/Enviar-DTE.css">
+    <link rel="stylesheet" href="../resources/css/Tipo_DTE.css">
+    <link rel="stylesheet" href="../resources/css/FormBasic.css">
+    <link rel="stylesheet" href="../resources/css/header.css">
+    <link rel="stylesheet" href="../resources/css/Alertas_y_Eventos.css">
+</head>
+<body>
+    <%- include('../../header')%>
+    <%- include('../Menu_Lateral')%>
+    
+    <form class="Formularios_DTE" id="Formularios_DTE" method="POST" action="">
+            <div class="Formulario_DTE_Info">
+                <div class="Tipo_DTE" id="Tipo_DTE">
+
+                    <label for="Factura" class="Label-Tipo-DTE">
+                        <input type="radio" id="Factura" name="tipoDTE" value="Factura" hidden>
+                        <div class="Caja_Factura_div">Factura</div>
+                    </label>
+
+                    <label for="Factura_Exportacion" class="Label-Tipo-DTE">
+                        <input type="radio" id="Factura_Exportacion" name="tipoDTE" value="Factura de Exportacion" hidden>
+                        <div class="Factura_Exportacion_div">Factura de Exportación</div>
+                    </label>
+
+                    <label for="Comprobante_Liquidacion">
+                        <input type="radio" id="Comprobante_Liquidacion" name="tipoDTE" value="Comprobante de Liquidacion" hidden>
+                        <div class="Comprobante_Liquidacion_div">Comprobante de Liquidación</div>
+                    </label>
+
+                    <label for="Comprobante_Retencion">
+                        <input type="radio" id="Comprobante_Retencion" name="tipoDTE" value="Comprobante de Retencion" hidden>
+                        <div class="Comprobante_Retencion_div">Comprobante de Retención</div>
+                    </label>
+
+                    <label for="Nota_Remision">
+                        <input type="radio" id="Nota_Remision" name="tipoDTE" value="Nota de Remision" hidden>
+                        <div class="Nota_Remision_div">Nota de Remisión</div>
+                    </label>
+
+                    <label for="Nota_Debito">
+                        <input type="radio" id="Nota_Debito" name="tipoDTE" value="Nota de Debito" hidden>
+                        <div class="Nota_Debito_div">Nota de Débito</div>
+                    </label>
+
+                    <label for="Nota_Credito">
+                        <input type="radio" id="Nota_Credito" name="tipoDTE" value="Nota de Credito" hidden>
+                        <div class="Nota_Credito_div">Nota de Crédito</div>
+                    </label>
+
+                    <label for="Comprobante_Donacion">
+                        <input type="radio" id="Comprobante_Donacion" name="tipoDTE" value="Comprobante de Donacion" hidden>
+                        <div class="Comprobante_Donacion_div">Comprobante de Donación</div>
+                    </label>
+
+                    <label for="Factura_Sujeto_Excluido">
+                        <input type="radio" id="Factura_Sujeto_Excluido" name="tipoDTE" value="Factura de Sujeto Excluido" hidden>
+                        <div class="Factura_Sujeto_Excluido_div">Factura Sujeto Excluido</div>
+                    </label>
+
+                    <label for="Comprobante_De_Credito_Fiscal">
+                        <input type="radio" id="Comprobante_De_Credito_Fiscal" name="tipoDTE" value="Comprobante De Credito Fiscal" hidden>
+                        <div class="Comprobante_De_Credito_Fiscal_div">Comprobante de Crédito Fiscal</div>
+                    </label>
+
+                    <label for="Documento_Contable_de_Liquidacion">
+                        <input type="radio" id="Documento_Contable_de_Liquidacion" name="tipoDTE" value="Documento Contable de Liquidacion" hidden>
+                        <div class="Documento_Contable_de_Liquidacion_div">Documento Comprobante de Liquidación</div>
+                    </label>
+                    <div id="error" class="error"></div>
+                </div>
+            </div>
+            <div class="Formularios_DTE_P2">
+                <div class="Botones_Principales_Formulario">
+                    <a class="Btn_Atras" href="/aministrar">
+                        <button id="btn-Atras" class="btn-Atras">Atras</button>
+                    </a>
+                    <div class="Btn_Limpiar">
+                        <button id="btn-Limpiar" form="Formularios_DTE" class="btn-Limpiar" type="reset">Limpiar</button>
+                    </div>
+                    <a class="Btn_Siguiente" href="/administrar/emisor">
+                        <button id="Btn_Siguiente_Tipo_DTE" class="btn-Siguiente">Siguiente</button>
+                    </a>
+                </div>
+            </div>
+    </form>
+
+</body>
+<script src="../resources/js/Validacion_Tipo_DTE.js"></script>
+</html>

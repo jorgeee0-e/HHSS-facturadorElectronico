@@ -1,0 +1,35 @@
+
+.Formularios_DTE{
+    z-index: 100;
+}
+
+.Formulario_DTE_Info{
+    width: 100%;
+    height: 100%;
+    padding: 2% 0;
+}
+
+.Tipo_DTE > label {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Tipo_DTE > label > div {
+    width: 97%;
+    text-align: left;
+    padding: 1%;
+    margin: 0.5% 0;
+    border: 2px solid rgb(119, 119, 255);
+    color: rgb(119, 119, 255);
+    font-size: 20px;
+}
+
+/*Para esta clase es escencial que el input vaya primero y despues el Div*/
+input[name="tipoDTE"]:checked + label > div,
+        input[name="tipoDTE"]:checked ~ div {
+            transition: 0.5s;
+            background-color: rgb(119, 119, 255);
+            color: white;
+        }
