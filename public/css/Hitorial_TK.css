@@ -36,6 +36,7 @@
 
 .Historial_Tokens_Table > tbody {
     flex-direction: column;
+    height: auto;
 }
 
 .Historial_Tokens_Table > thead > tr {
@@ -44,22 +45,49 @@
 }
 
 .Historial_Tokens_Table > thead > tr > th{
-    flex: 2;
     background-color: rgba(233, 233, 233, 0.39);
-    padding: 2%;
+    padding: 2% 3%;
+    border: 2px solid rgb(81, 81, 192);
 }
 
+.Historial_Tokens_Table > thead > tr > th:nth-child(1){
+    width: 5%;
+}
+
+.Historial_Tokens_Table > thead > tr > th:nth-child(2){
+    width: 65%;
+}
+
+.Historial_Tokens_Table > thead > tr > th:nth-child(3){
+    width: 30%;
+}
 .Historial_Tokens_Table > tbody > tr {
     width: 100%;
+    height: auto;
     display: flex;
 }
 
 .Historial_Tokens_Table > tbody > tr > td{
-    flex: 2;
     display: flex;
     align-items: center;
+    border: 2px solid rgb(177, 177, 177);
     justify-content: center;
-    padding: 1% 0;
+    padding: 1% 3%;
+}
+
+.Historial_Tokens_Table > tbody > tr > td:nth-child(1){
+    width: 5%;
+}
+
+.Historial_Tokens_Table > tbody > tr > td:nth-child(2){
+    width: 65%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    text-align: center;
+}
+
+.Historial_Tokens_Table > tbody > tr > td:nth-child(3){
+    width: 30%;
 }
 
 .Seccion_Impar{

@@ -33,7 +33,7 @@ async function insertarUsuario(req,res){
         console.log(val);
 
     const sql = `
-        INSERT INTO t_usuario (NOMBRE, APELLIDOS, CORREO, CORREOSECUNDARIO, DUI, CODUSUARIO, LLAVE)
+        INSERT INTO t_usuario (nombre, apellidos, correo, correoSecundario, dui, codUsuario, llave)
         VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
 
@@ -42,7 +42,7 @@ async function insertarUsuario(req,res){
     if(VerificacionUsuario === false){
         try {
             conexion.query(sql, [registro.Nombre_Registro, registro.Apellidos_Registro, registro.Gmail_Registro, registro.Gmail_Registro_Sec, registro.DUI_Registro, registro.Usuario_Registro, registro.Passw_Registro]);
-            res.send('ALTA EXITOSA');
+            res.redirect('/index');
         } catch (error) {
             console.error(error);
             res.status(500).send('Error en la inserción del usuario');

@@ -47,7 +47,7 @@
     align-items: center;
 }
 
-.Btn_Atras > a, .Btn_Limpiar > a, .Btn_Siguiente > a{
+.Btn_Atras > a, .Btn_Limpiar > a, .Btn_Siguiente > button{
     padding: 6% 0;
     border: 2px solid rgb(90, 142, 255);
     color: rgb(90, 142, 255);
@@ -96,7 +96,7 @@
     outline: none;
 }
 
-.Btn_Atras > a:hover, .Btn_Limpiar > a:hover, .Btn_Siguiente > a:hover{
+.Btn_Atras > a:hover, .Btn_Limpiar > a:hover, .Btn_Siguiente > button:hover{
     transition: 0.1s ease-in-out;
     background-color: rgba(255, 255, 255, 0.534);
     transform: scale(.95);

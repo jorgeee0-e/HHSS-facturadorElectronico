@@ -10,45 +10,9 @@
     <title>Emisor</title>
 </head>
 <body>
-
-    <header class="encabezado-usuario">
-
-        <div class="div-encabezado-usuario">
-            <div class="token-generacion">
-                <p>Token</p>
-                <div class="token-estado">
-                    <p id="tk_etatus">✔</p>
-                </div>
-            </div>
-            <div class="eventos-header">
-                <p>Eventos</p>
-                <img src="../../img/eventos.png" alt="" width="100%" height="100%">
-            </div>
-            <div class="soporte-header">
-                <p>Soporte</p>
-                <img src="../../img/user.png" alt="" width="100%" height="100%">
-            </div>
-        </div>
-
-        <div class="usuario-informacion">
-            <div class="estado-usuario">
-                <p id="usr_status">✔</p>
-            </div>
-            <div class="img-usuario">
-                <img src="../../img/user.png" alt="" width="100%" height="100%">
-            </div>
-            <div class="informacion-usuario">
-                <p class="informacion-usuario-bienvenido">
-                    Bienvenido
-                </p>
-                <p class="informacion-usuario-nombre">
-                    Josue Alejandro Rodriguez Murcia
-                </p>
-            </div>
-        </div>
-
-    </header>
-
+    <%- include('../../header')%>
+    <%- include('../Menu_Lateral')%>
+    
     <form id="Emisor_DTE_Form">
         <div class="Tipo_DTE_Emisor" id="Tipo_DTE_Emisor">
             <p class="Tipo_DTE_Emisor_Title">Emisor</p>

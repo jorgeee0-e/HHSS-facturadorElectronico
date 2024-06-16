@@ -24,18 +24,18 @@ async function LoguearUsuario(Usuario_Login, Passw_Login) {
 
     if (user && pass) {
         try {
-            const results = await query('SELECT * FROM t_usuario WHERE CODUSUARIO = ?', [user]);
+            const results = await query('SELECT * FROM t_usuario WHERE codUsuario = ?', [user]);
             if (results.length === 0) {
                 console.log("Usuario Incorrecto");
                 return null;
             }
-            const isMatch = await bcryptjs.compare(pass, results[0].LLAVE);
+            const isMatch = await bcryptjs.compare(pass, results[0].llave);
             if (!isMatch) {
                 console.log("Contraseña Incorrecta");
                 return null;
             }
             if (isMatch) {
-                return user;
+                return { idUsuario: results[0].id, codUsuario: user };
             }
         } catch (error) {
             console.log("Error en la BDD", error);
@@ -49,8 +49,7 @@ async function LoguearUsuario(Usuario_Login, Passw_Login) {
 
 async function VerificarSesion(){
     if (req.session.username) {
-        
-        retrun 
+        return null;
     } else {
         res.redirect('/'); // Redirige al login si no hay usuario en la sesión
     }

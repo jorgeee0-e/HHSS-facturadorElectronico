@@ -11,19 +11,19 @@
 <body>
     <%- include('../header')%>
     <div class="Generar_Token_P">
-        <form id="Generacion_Token" class="Form_Generar_Token">
+        <form id="Generacion_Token" class="Form_Generar_Token" action="/authtoken" method="post">
             <div class="Titulo_Generar_Token">
                 <p>Generar Token</p>
             </div>
             <div class="Solicitar_Usuario_Cont">
                 <label for="Id_Usuario_Token">
-                    Usuario
+                    NIT
                 </label>
-                <input type="text" name="Info_Token_Usuarios" id="Id_Usuario_Token">
+                <input type="text" name="Id_Usuario_Token" id="Id_Usuario_Token">
                 <label for="Contrasena_Token">
-                    ID
+                    Contraseña
                 </label>
-                <input type="password" name="Info_Token_Usuarios" id="Contrasena_Token">
+                <input type="password" name="Contrasena_Token" id="Contrasena_Token">
                 <div id="error_reenvio">
                 </div>
             </div>
@@ -36,7 +36,7 @@
                         <a id="btn-Limpiar"class="btn-Limpiar" href="/token/historial" type="reset">Historial De Tokens</a>
                     </div>
                     <div class="Btn_Siguiente">
-                        <a id="Btn_Generacion_Token" href="/generacion_token" type="submit" form="Generacion_Token" class="btn-Generar-Token">Generar Token</a>
+                        <button id="Btn_Generacion_Token" form="Generacion_Token" class="btn-Generar-Token">Generar Token</button>
                     </div>
                 </div>
             </div>

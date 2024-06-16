@@ -11,16 +11,30 @@
 <%- include('../header')%>
 <body>
     <div class="administrar-dte">
-        <a class="caja-administrar-dte" href="/administrar/tipo_dte">
-            <div class="enviar-DTE" id="enviar-DTE">
-                <div class="img-DTE">
-                    <img src="resources/img/form.png" width="100%" height="100%" alt="img-DTE">
+        <%if (locals.tokenAct) {%>
+            <a class="caja-administrar-dte" href="/administrar/tipo_dte">
+                <div class="enviar-DTE" id="enviar-DTE">
+                    <div class="img-DTE">
+                        <img src="resources/img/form.png" width="100%" height="100%" alt="img-DTE">
+                    </div>
+                    <div class="titulo-DTE">
+                        <p>ENVIAR DTE</p>
+                    </div>
                 </div>
-                <div class="titulo-DTE">
-                    <p>ENVIAR DTE</p>
-                </div>
-            </div>
-        </a>
+            </a>
+            <%} else {%>
+                <!-- No permite al usuario interactuar con el boton-->
+                <a class="caja-administrar-dte" style="pointer-events: none;filter: grayscale(100%);">
+                    <div class="enviar-DTE" id="enviar-DTE">
+                        <div class="img-DTE">
+                            <img src="resources/img/form.png" width="100%" height="100%" alt="img-DTE">
+                        </div>
+                        <div class="titulo-DTE">
+                            <p>ENVIAR DTE</p>
+                        </div>
+                    </div>
+                </a>
+            <%}%>
         <a class="caja-resgistro-dte">
             <div class="registros-DTE">
                 <div class="img-registros-DTE">

@@ -13,18 +13,24 @@
             <div class="div-encabezado-usuario">
                 <a class="token-generacion" form="generar_TK" href="/token">
                     <p>Token</p>
-                    <div class="token-estado">
+                    <%if (locals.tokenAct) {%>
+                    <div class="token-estado token-estado_true">
                         <p id="tk_etatus">✔</p>
                     </div>
+                    <%} else {%>
+                        <div class="token-estado token-estado_false">
+                            <p id="tk_etatus">X</p>
+                        </div>
+                    <%}%>
                 </a>
                 <a class="eventos-header" href="#">
                     <p>Soporte</p>
                     <img src="../resources/img/user.png" alt="" width="100%" height="100%">
                 </a>
-                <button class="soporte-header" id="cerrar_sesion">
+                <a class="soporte-header" id="cerrar_sesion" href="/logout">
                     <p>Cerrar Sesion</p>
                     <img src="../resources/img/logout.png" alt="" width="100%" height="100%">
-                </button>
+                </a>
             </div>
     
             <div class="usuario-informacion">
