@@ -1,3 +1,4 @@
+
 const loguearClass = require('../models/loguearse_models');
 const verificarClass = require('./validaciones_encriptaciones');
 const conexion = require('../models/conexion');
@@ -16,8 +17,8 @@ async function LoguearUsuario(Usuario_Login, Passw_Login) {
     let user = loguear.Usuario_Login;
     let pass = loguear.Passw_Login;
 
-    console.log(Usuario_Login, Passw_Login);
-
+/*     console.log(Usuario_Login, Passw_Login);
+ */
     // Encriptar la contraseña ingresada
     const PassEncrypt = await verificar.EncriptarCont(pass);
     loguear.Passw_Login = PassEncrypt;
@@ -42,6 +43,7 @@ async function LoguearUsuario(Usuario_Login, Passw_Login) {
             return null;
         }
     } else {
+        
         console.log("El Usuario y Contraseña es requerido");
         return null;
     }

@@ -6,6 +6,7 @@
     <title>Iniciar Sesion</title>
     <link rel="stylesheet" href="resources/css/FormBasic.css">
     <link rel="stylesheet" href="resources/css/Inicio_Sesion.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body style="background-color: white;">
     <div class="container-top">
@@ -13,7 +14,7 @@
             <img src="resources/img/Bienvenido.png" width="100%" height="100%" alt="logo" class="logo">
         </div>
         
-        <form action="/auth" method="POST" class="form-inicio-sesion">
+        <form id="loginForm"  method="POST" class="form-inicio-sesion">
             <h1>Bienvenido</h1>
             <input type="text" name="Usuario_Login" id="Usuario_Login" class="Usuario_Login" placeholder="Usuario">
             <input type="password" name="Passw_Login" id="Passw_Login" class="Passw_Login" placeholder="Contrasena">
@@ -21,6 +22,46 @@
             <button type="submit" class="btn-inicio-sesion" name="btn-inicio-sesion">Iniciar Sesion</button>
         </form>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById('Usuario_Login').value;
+            const contrasena = document.getElementById('Passw_Login').value;
+
+            try {
+                
+                const response = await fetch('/auth' , {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ Usuario_Login: usuario, Passw_Login: contrasena })
+                });
+                console.log(response);
+                console.log(response.ok);
+                //compara si la respuesta fue exitosa para redirigir a la pagina de adminitracion o mostrar el pop up del sweetalert
+                if (response.ok) {
+                    window.location.href = '/administrar'; 
+                    
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Credenciales Invalidas'
+                    });
+                }
+            } catch (error) {
+                console.log(error.message);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: error.message
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>

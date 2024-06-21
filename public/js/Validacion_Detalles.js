@@ -98,6 +98,10 @@ function ValidarTelefono(TipoTelefono){
     const expR2 = /\d{8}$/;
     const expR3 = /\d{4}-\d{4}$/;
     
+    //+503 2266 5895
+    //2255 9966
+    //5668-6454
+
     if(expR.test(TipoTelefono)){
         return expR.test(TipoTelefono);
     }

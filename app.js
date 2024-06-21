@@ -2,6 +2,7 @@
 
 //NIT: 06142803901121
 //CONT: Un!v3r$0/*
+const Swal = require('sweetalert2');
 const express = require('express');
 const session = require('express-session');
 const app = express();
@@ -33,15 +34,22 @@ const insertarUsuario = require('./controlador/registrarse_controller');
 const LoguearUsuario = require('./controlador/loguear_controller');
 const bodyParser = require('body-parser');
 const verificarValidar = require("./models/validar_token");
+const VerificarUserTK = require("./controlador/verificar_usuario_controller");
+
 const token = require("./controlador/token_controller");
+
+
+const jwt = require('jsonwebtoken');
 
 //llamar una nueva clase para eventos sobre token
 const tokenClass = new token();
+const VerificarUserTKClass = new VerificarUserTK;
 
 //variables locales de sesion
 app.use((req,res, next) =>{
     res.locals.username = req.session.username;
     res.locals.userId = req.session.userId;
+    res.locals.tokenSession = req.session.tokenSession;
     res.locals.tokenAct = req.session.tokenAct;
     next();
 });
@@ -59,12 +67,6 @@ app.get('/index',(req, res) =>{
 app.get('/registrarse',(req, res) =>{
     res.render("Registrarse");
 });
-
-//Direccion de ruta a generacion Token
-app.get('/token', (req,res) => {
-    res.render('Usuario/Generacion_Token');
-});
-
 
 
 //Middleware para verificar que el token este activo, se ocupa la funcion dentro de renderizado de paginar, en este caso los formularios
@@ -103,63 +105,9 @@ const verificarTokenMiddleware = (options = { blockIfInvalid: false }) => {
     };
 };
 
-app.get('/administrar', verificarTokenMiddleware({ blockIfInvalid: false }), async (req, res) => {
-    if (req.token) {
-        const tokenA = req.token;
-        console.log('Token en la ruta:', tokenA);
-        req.session.tokenAct = tokenA;
-        res.render('Usuario/Administrar_DTE');
-    } else {
-        req.session.tokenAct = null;
-        res.render('Usuario/Administrar_DTE');
-    }
-});
-
-app.get('/administrar/tipo_dte', verificarTokenMiddleware({ blockIfInvalid: true }), async (req, res) => {
-        res.render('Usuario/Enviar_DTE/Tipo_DTE');
-});
-
-app.get('/administrar/emisor', verificarTokenMiddleware({ blockIfInvalid: true }), async (req, res) => {
-        res.render('Usuario/Enviar_DTE/Emisor');
-});
-
-app.get('/administrar/receptor', verificarTokenMiddleware({ blockIfInvalid: true }), async (req, res) => {
-        res.render('Usuario/Enviar_DTE/Receptor');
-});
-
-app.get('/administrar/detalles', verificarTokenMiddleware({ blockIfInvalid: true }), async (req, res) => {
-        res.render('Usuario/Enviar_DTE/Detalles');
-});
-
-app.get('/Menu_Lateral', (req, res) =>{
-    try {
-        res.render("/Usuario/Menu_Lateral");
-    } catch (err) {
-        console.error('Error en la ruta /administrar/tipo_dte:', err);
-        res.status(500).send('Error al procesar la solicitud');
-    }
-});
-
-app.get('/header', (req, res)=> {
-        res.render('header');
-});
-
-app.get('/logout', (req, res) => {
-    req.session.destroy((err) => {
-        if (err) {
-            return res.status(500).send('Error al cerrar sesión');
-        }
-        res.redirect('/');
-    });
-});
-
-app.get('/token/historial', (req, res) => {
-    const CargarToken = tokenClass.historial_token(req,res);
-});
-
-
 //Metodos Post
 //Metodo de Registro Usuario
+
 app.post('/registro', async (req, res) => {
     insertarUsuario(req,res);
 });
@@ -169,14 +117,26 @@ app.post('/auth', async (req, res) => {
     const user = await LoguearUsuario(Usuario_Login, Passw_Login);
 
     if (user) {
+        const keysession = user.codUsuario;
+        const payload = {
+            user: Usuario_Login
+        };
+        const options = {
+            expiresIn: '30m'
+        };
+        const tokenSession = jwt.sign(payload, keysession, options);
+        /* console.log('Token de sesion: ', tokenSession); */
+
+        req.session.tokenSession = tokenSession;
         req.session.username = user.codUsuario;
         req.session.userId = user.idUsuario;
-        res.redirect('/administrar');
+        res.status(200).json({ success: true });
+        
     } else {
-        res.send('Credenciales inválidas');
+        res.status(401).json({ success: false });
+        /* res.send('Credenciales inválidas'); */
     }
 });
-
 
 app.post('/authtoken', async (req, res) => {
     const { Id_Usuario_Token, Contrasena_Token } = req.body;
@@ -204,6 +164,66 @@ app.post('/authtoken', async (req, res) => {
         console.error('Error en el manejo de la solicitud:', error);
         return res.status(500).send('Error en el servidor');
     }
+});
+
+
+//Verificacion Global sobre el token de sesion
+app.use(VerificarUserTKClass.verificarUsuario);
+
+app.get('/administrar/tipo_dte', verificarTokenMiddleware({ blockIfInvalid: true }), async (req, res) => {
+        res.render('Usuario/Enviar_DTE/Tipo_DTE');
+});
+
+app.get('/administrar/emisor', verificarTokenMiddleware({ blockIfInvalid: true }), async (req, res) => {
+        res.render('Usuario/Enviar_DTE/Emisor');
+});
+
+app.get('/administrar/receptor', verificarTokenMiddleware({ blockIfInvalid: true }), async (req, res) => {
+        res.render('Usuario/Enviar_DTE/Receptor');
+});
+
+app.get('/administrar/detalles', verificarTokenMiddleware({ blockIfInvalid: true }), async (req, res) => {
+        res.render('Usuario/Enviar_DTE/Detalles');
+});
+
+app.get('/Menu_Lateral', (req, res) =>{
+    try {
+        res.render("/Usuario/Menu_Lateral");
+    } catch (err) {
+        console.error('Error en la ruta /administrar/tipo_dte:', err);
+        res.status(500).send('Error al procesar la solicitud');
+    }
+});
+
+app.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).send('Error al cerrar sesión');
+        }
+        res.redirect('/');
+    });
+});
+
+app.get('/administrar', verificarTokenMiddleware({ blockIfInvalid: false }), async (req, res) => {
+    if (req.token) {
+        const tokenA = req.token;
+        console.log('Token en la ruta:', tokenA);
+        req.session.tokenAct = tokenA;
+        res.render('Usuario/Administrar_DTE');
+    } else {
+        req.session.tokenAct = null;
+        res.render('Usuario/Administrar_DTE');
+    }
+});
+
+
+//Direccion de ruta a generacion Token
+app.get('/token', (req,res) => {
+    res.render('Usuario/Generacion_Token');
+});
+
+app.get('/token/historial', (req, res) => {
+    const CargarToken = tokenClass.historial_token(req,res);
 });
 
 app.listen(3000, (req, res)=>{

@@ -1,0 +1,20 @@
+{
+  "status": "OK",
+  "body": {
+    "user": "06142803901121",
+    "token": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwNjE0MjgwMzkwMTEyMSIsImF1dGhvcml0aWVzIjpbIlVTRVIiLCJVU0VSX0FQSSIsIlVzdWFyaW8iXSwiaWF0IjoxNzE4OTMyOTg2LCJleHAiOjE3MTkwMTkzODZ9.fLt4sxWTtJ0IUXexHDrOBTSpchx0y_-r3oRN0i8j1_JW-d3FizKwgvLhzd9LzSYe9KQrGE2c9OXRld-wBrataw",
+    "rol": {
+      "nombre": "Usuario",
+      "codigo": "ROLE_USER",
+      "descripcion": null,
+      "rolSuperior": null,
+      "nivel": null,
+      "activo": null,
+      "permisos": null
+    },
+    "roles": [
+      "ROLE_USER"
+    ],
+    "tokenType": "Bearer"
+  }
+}
